@@ -1,5 +1,7 @@
 # YOLOv8 Face Mask Detection
 
+*[Read in English](README.en.md)*
+
 Object detection uçtan uca projesi: yüzlerde maske takılı/takılı değil/yanlış takılı
 sınıflarını YOLOv8n ile tespit eden bir model. Pascal VOC formatındaki bir veri
 setinin YOLO formatına dönüştürülmesinden eğitim sonuçlarının yorumlanmasına kadar
@@ -56,6 +58,21 @@ precision'dan (0.87) düşük olmasının temel sebebi, azınlık sınıflarda
 modelin nesneleri kaçırması (düşük recall) — özellikle kalabalık/kısmi
 görünür yüzlerde. Bu, veri setindeki class imbalance'ın (77.6% / 17.2% / 2.9%)
 doğrudan bir sonucu.
+
+**Not:** `mask_weared_incorrect` için 0.541 mAP50 sadece 170 görsellik val
+setindeki **19 instance** üzerinden hesaplanıyor — istatistiksel olarak
+gürültülü bir sayı, tek tük yanlış/doğru tahmin bu oranı birkaç puan
+oynatabilir. Bu sınıf için asıl güvenilir sonuç, daha büyük bir test
+setiyle veya cross-validation ile doğrulanmadan kesin bir iddia değildir.
+
+### Confusion Matrix ve PR Eğrisi
+
+![Confusion Matrix](runs/detect/runs/mask_detect/confusion_matrix_normalized.png)
+![PR Curve](runs/detect/runs/mask_detect/BoxPR_curve.png)
+
+### Inference Örneği
+
+![Inference Example](runs/detect/runs/inference_test/image0.jpg)
 
 ## Sonraki adımlar
 
