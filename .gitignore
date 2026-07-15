@@ -1,0 +1,9 @@
+# Model weights (large, reproducible via training)
+*.pt
+
+# Raw / processed image datasets (regenerate via scripts/convert_and_split.py)
+dataset/raw/
+dataset/images/
+
+# Ultralytics label cache
+*.cache
